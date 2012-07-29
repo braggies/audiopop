@@ -23,3 +23,7 @@ gem 'devise'
 group :development do
   gem 'debugger'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+end
