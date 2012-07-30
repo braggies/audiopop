@@ -1,0 +1,6 @@
+language: ruby
+rvm:
+  - 1.9.3
+env:
+  - AUDIOPOP_APP_ID=dummy AUDIOPOP_APP_SECRET=dummy
+script: bundle exec rake db:schema:load db:test:prepare spec
