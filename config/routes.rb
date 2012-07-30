@@ -1,7 +1,11 @@
 Audiopop::Application.routes.draw do
-  devise_for :users, controllers: { omniauth_callbacks: 'users' }
-
   root :to => 'pages#home'
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users' }
+  devise_scope :user do # required because we are only using omniauth facebook
+    get 'sign_in', to: 'users/sessions#new', as: :new_user_session
+    get 'sign_out', to: 'users/sessions#destroy', as: :destroy_user_session
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
