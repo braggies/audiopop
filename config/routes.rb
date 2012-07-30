@@ -1,5 +1,5 @@
 Audiopop::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { omniauth_callbacks: 'users' }
 
   root :to => 'pages#home'
 

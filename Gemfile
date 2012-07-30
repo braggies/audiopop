@@ -26,4 +26,5 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'shoulda', require: false
 end
